@@ -1,12 +1,10 @@
 import { Button } from "@material-ui/core";
-import Head from "next/head";
-import Image from "next/image";
 import ReactPlayer from "react-player/youtube";
-import styles from "../styles/Home.module.css";
+import './App.css'
 import axios from "axios";
 import YouTube from "react-youtube";
-import { useState, useEffect } from "react";
-export default function Home() {
+import React, { useState, useEffect } from "react";
+function Home() {
   const [youtubeid, setyoutubeid] = useState("");
   const opts = {
     height: "400",
@@ -25,20 +23,8 @@ export default function Home() {
   //     console.log(youtubeid);
   //   });
   return (
-    <div classNameName="index">
-      <Head>
-        <title>Mood Melody</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-          crossorigin="anonymous"
-        ></link>
-      </Head>
+    <div className="app">
       <div>
-        <Button>Hello</Button>
         <div
           className="content-2-3 container-xxl mx-auto p-0  position-relative"
           style={{fontFamily: 'Poppins'}}
@@ -405,3 +391,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home
