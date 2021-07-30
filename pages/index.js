@@ -1,8 +1,29 @@
+import { Button } from "@material-ui/core";
 import Head from "next/head";
 import Image from "next/image";
+import ReactPlayer from "react-player/youtube";
 import styles from "../styles/Home.module.css";
-
+import axios from "axios";
+import YouTube from "react-youtube";
+import { useState, useEffect } from "react";
 export default function Home() {
+  const [youtubeid, setyoutubeid] = useState("");
+  const opts = {
+    height: "400",
+    width: "400",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+  // axios
+  //   .get(
+  //     "https://www.googleapis.com/youtube/v3/search?q=hello&key=AIzaSyBAgDT0HGZHODowOww9JErcpDthy61dAVY"
+  //   )
+  //   .then((response) => {
+  //     setyoutubeid(response.data.items[0].id.videoId);
+  //     console.log(youtubeid);
+  //   });
   return (
     <div className="index">
       <Head>
@@ -11,7 +32,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <h1>hello</h1>
+        {/* ml cam goes here */}
+        <Button style={{ color: "red", backgroundColor: "black" }}>
+          hello
+        </Button>
+        <video src="https://www.youtube.com/watch?v=PYFltdGJ-Rc" controls>
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );
