@@ -2,6 +2,8 @@ import ReactPlayer from "react-player/youtube";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cam from "./Cam.js";
+import logo_thing from './logo_thing.png'
+import logo_web from './logo.png'
 import YouTube from "react-youtube";
 import { provider, auth } from "./firebase.js";
 import logo from "./logo_web.png";
@@ -40,7 +42,8 @@ function Home() {
               <a href="#">
                 <img
                   style={{ marginRight: "0.75rem" }}
-                  src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-3.png"
+                  src={logo_web}
+                  style={{height: '30px', borderRadius: '10px'}}
                   alt=""
                 />
               </a>
@@ -157,21 +160,21 @@ function Home() {
                 </ul>
                 <div className="gap-3">
                   <GoogleLogin
-                        clientId="411054485419-rpd4fr1le08pg43o34povfffa6jv8he9.apps.googleusercontent.com"
-                        render={(renderProps) => (
-                          <button
-                            className="btn btn-default btn-no-fill"
-                            onClick={renderProps.onClick}
-                            disabled={renderProps.disabled}
-                          >
-                            Log In
-                          </button>
-                        )}
-                        buttonText="Login"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={"single_host_origin"}
-                      />
+                    clientId="411054485419-rpd4fr1le08pg43o34povfffa6jv8he9.apps.googleusercontent.com"
+                    render={(renderProps) => (
+                      <button
+                        className="btn btn-default btn-no-fill"
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                      >
+                        Log In
+                      </button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={"single_host_origin"}
+                  />
                   <button className="btn btn-fill text-white border-0">
                     Try Now
                   </button>
@@ -296,13 +299,14 @@ function Home() {
                           <div className="d-flex flex-lg-row flex-column align-items-center">
                             <div className="me-lg-3">
                               <img
-                                src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-1%20(1).png"
+                                src={logo_thing}
                                 alt=""
+                                style={{height: '150px', borderRadius: '40px'}}
                               />
                             </div>
                             <div className="flex-grow-1 text-lg-start text-center card-text">
                               <h3 className="card-title text-white">
-                                Fast Business Management in 30 minutes
+                                Fast emotional suppress to make you feel better!
                               </h3>
                               <p className="card-caption">
                                 Our tools for business analysis helps an
@@ -312,14 +316,22 @@ function Home() {
                               </p>
                             </div>
                             <div className="card-btn-space">
-                              <button className="btn btn-card text-white">
-                                Buy Now
-                              </button>
-                              <a href="/cam" style={{color: 'white', textDecoration: 'none'}}>
-                              <button className="btn btn-outline">
-                                Demo Version
-                              </button></a>
-                              
+                              <a href="#">
+                                <button className="btn btn-card text-white">
+                                  Back to top
+                                </button>
+                              </a>
+                              <a
+                                href="/cam"
+                                style={{
+                                  color: "white",
+                                  textDecoration: "none",
+                                }}
+                              >
+                                <button className="btn btn-outline">
+                                  Demo Version
+                                </button>
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -335,8 +347,9 @@ function Home() {
                             <div className="">
                               <div className="list-space">
                                 <img
-                                  src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-3.png"
+                                  src={logo_web}
                                   alt=""
+                                  style={{height: '50px', borderRadius: '20px'}}
                                 />
                               </div>
                               <nav className="list-unstyled">

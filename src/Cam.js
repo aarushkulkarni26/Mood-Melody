@@ -3,7 +3,7 @@ import "./App.css";
 import ml5 from "ml5";
 import useInterval from "@use-it/interval";
 import songs from "./songs.js";
-import axios from "axios";
+import axios from "axios";import logo_thing from './logo_thing.png'
 import ReactPlayer from "react-player/youtube";
 let classifier;
 
@@ -14,14 +14,6 @@ function Cam() {
   const [youtubeid, setyoutubeid] = useState("");
   const [song, setSong] = useState("");
   const [request, setRequest] = useState(false);
-  const opts = {
-    height: "400",
-    width: "400",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
   useEffect(() => {
     classifier = ml5.imageClassifier(
       "https://teachablemachine.withgoogle.com/models/30c7A9hr8/" +
@@ -51,8 +43,8 @@ function Cam() {
 
   return (
     <div style={{textAlign: 'center', backgroundColor: '#141432'}}>
-      <h1>
-        Check my emotion, Sad or Happy! <br />
+      <h1 style={{color: 'white'}}>
+        Check my Emotion!<br />
       </h1>
       {/* <button
         className="btn btn-fill text-white border-0"
@@ -69,9 +61,9 @@ function Cam() {
         height="400"
       />
       {gaugeData[1].toFixed(2) > gaugeData[0].toFixed(2) ? (
-        <h1>You are Happy</h1>
+        <h1 style={{color: 'white'}}>You are Happy</h1>
       ) : (
-        <h1>You are Sad</h1>
+        <h1 style={{color: 'white'}}>You are Sad</h1>
       )}
       <button onClick={() => {
         gaugeData[0].toFixed(2) > gaugeData[1].toFixed(2)
@@ -88,7 +80,7 @@ function Cam() {
           setRequest(true);
         });
       }} className="btn btn-fill text-white border-0">
-        click me to get a song
+        <b>Double click</b>to get a song
       </button>
       <h1 style={{ textAlign: "center" }}>{song}</h1>
       {request == true ? (
